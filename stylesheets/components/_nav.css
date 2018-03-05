@@ -1,0 +1,64 @@
+nav, footer {
+  align-items: center;
+  display: flex;
+  height: 256px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+
+#app > div > nav > section > aside:nth-child(1) > a {
+  font-size: 32px;
+}
+
+nav a, footer a {
+  font-size: 1.25rem;
+  font-family: var(--sansSerifBold);
+  margin-left: 24px;
+  padding-bottom: .25rem;
+
+  &:first-child {
+    margin: 0;
+  }
+
+  &.active {
+    border-bottom: 2px solid var(--white);
+  }
+
+  &.btn {
+    background: rgba(255, 255, 255, .15);
+    border: 0px solid transparent;
+    border-radius: 64px;
+    color: var(--white);
+    padding: 12px 16px;
+
+    &:hover {
+      background: rgba(255, 255, 255, .25);
+      border: 0px solid transparent;
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, .35);
+    }
+  }
+}
+
+@media (--mobile) {
+  nav .container aside {
+    padding-bottom: 20px;
+  }
+
+  footer .container aside {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+
+  footer a, footer a:first-child {
+    margin: 0 12px 12px;
+  }
+}

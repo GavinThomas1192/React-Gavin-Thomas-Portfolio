@@ -1,0 +1,10 @@
+.morework {
+  a {
+    border-radius: 5px;
+    margin: 30px auto;
+
+    &[href]:hover {
+      background: var(--darkGray);
+    }
+  }
+}

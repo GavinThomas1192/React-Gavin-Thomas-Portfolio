@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'G';
+  font-weight: normal;
+  src: url('../fonts/G.eot');
+  src: url('../fonts/G.woff') format('woff'),
+    url('../fonts/G.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'M';
+  font-weight: normal;
+  src: url('../fonts/MM.woff') format('woff'),
+    url('../fonts/MM.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'M';
+  font-weight: normal;
+  font-style: italic;
+  src: url('../fonts/MMI.woff') format('woff'),
+    url('../fonts/MMI.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MD';
+  font-weight: medium;
+  src: url('../fonts/MD.woff') format('woff'),
+    url('../fonts/MD.woff2') format('woff2');
+}
+
+:root {
+  --black: #000000;
+  --darkGray: #222;
+  --mediumGray: #333;
+  --lightGray: #444;
+  --white: #ffffff;
+
+  --lightStripes: repeating-linear-gradient(
+    45deg,
+    var(--mediumGray),
+    var(--mediumGray) 4px,
+    var(--darkGray) 4px,
+    var(--darkGray) 8px
+  );
+
+  --darkStripes: repeating-linear-gradient(
+    45deg,
+    var(--mediumGray),
+    var(--mediumGray) 4px,
+    var(--black) 4px,
+    var(--black) 8px
+  );
+
+  --baseFont: -apple-system,
+    '.SFNSText-Regular',
+    'San Francisco',
+    'Roboto',
+    'Segoe UI',
+    'Helvetica Neue',
+    'Lucida Grande',
+    sans-serif;
+
+  --sansSerif: 'M', var(--baseFont);
+  --sansSerifBold: 'MD', var(--baseFont);
+  --serif: 'G';
+}
+
+@custom-media --mobile (width < 750px);
+
+::selection {
+  background: rgba(255, 255, 255, .3);
+  color: var(--white);
+}

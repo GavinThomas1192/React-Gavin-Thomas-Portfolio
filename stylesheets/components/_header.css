@@ -1,0 +1,47 @@
+.header {
+  margin-top: 128px;
+  margin-bottom: 256px;
+  flex-direction: column;
+
+  a {
+    display: flex;
+    font-size: 1.375rem;
+    line-height: calc(1.5rem * 1.375rem);
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  @media (--mobile) {
+    margin-top: 32px;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: calc(1.5rem * 2rem);
+}
+
+h2 {
+  font-size: 1.375rem;
+  line-height: calc(1.5rem * 1.375rem);
+  font-weight: normal;
+  max-width: 512px;
+}
+
+.headline {
+  font-size: 2rem;
+  line-height: calc(1.5rem * 2rem);
+}
+
+.split-view {
+  h3 {
+    font-size: 2rem;
+    line-height: calc(1.5rem * 2rem);
+  }
+
+  h4 {
+    font-size: 1.375rem;
+    line-height: calc(1.5rem * 1.375rem);
+    font-weight: normal;
+  }
+}
