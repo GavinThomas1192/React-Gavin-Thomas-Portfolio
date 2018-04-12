@@ -1,170 +1,170 @@
 // OLD style
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: black;
-    color: white;
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.5rem;
-    letter-spacing: .2px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  a {
-    color: inherit;
-    line-height: inherit;
-    text-decoration: none;
-    transition: .2s all ease-in-out;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  transition: 0.2s all ease-in-out;
+}
 .container {
-    lost-center: 1100px;
-    padding: 0 20px;
-  
-    &.small {
-      lost-center: 700px;
-    }
-  
-    &.full {
-      lost-center: 100%;
-      padding: 0;
-    }
-  }
-  .four {
-    lost-column: 4/12 flex;
-  }
-  .seven {
-    lost-column: 7/12 flex;
+  lost-center: 1100px;
+  padding: 0 20px;
+
+  &.small {
+    lost-center: 700px;
   }
 
-  .five {
-    lost-column: 5/12 flex;
+  &.full {
+    lost-center: 100%;
+    padding: 0;
+  }
+}
+.four {
+  lost-column: 4/12 flex;
+}
+.seven {
+  lost-column: 7/12 flex;
+}
+
+.five {
+  lost-column: 5/12 flex;
+}
+
+.underline a {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    border-bottom: 2px solid white;
   }
 
-  .underline a {
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
-  
-    &:hover {
-      border-bottom: 2px solid white;
-    }
-  
-    &:active {
-      opacity: .5;
-    }
+  &:active {
+    opacity: 0.5;
   }
+}
 
-  img, svg {
-    display: block;
-    width: 100%;
-  }
+img,
+svg {
+  display: block;
+  width: 100%;
+}
 
 //   OLD NAV SYTLE
-nav, footer {
-    align-items: center;
+nav,
+footer {
+  align-items: center;
+  display: flex;
+  height: 256px;
+
+  .container {
     display: flex;
-    height: 256px;
-  
-    .container {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-      justify-content: space-between;
-    }
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
   }
-  
-  #app > div > nav > section > aside:nth-child(1) > a {
-    font-size: 32px;
+}
+
+#app > div > nav > section > aside:nth-child(1) > a {
+  font-size: 32px;
+}
+
+nav a,
+footer a {
+  font-size: 1.25rem;
+  margin-left: 24px;
+  padding-bottom: 0.25rem;
+
+  &:first-child {
+    margin: 0;
   }
-  
-  nav a, footer a {
-    font-size: 1.25rem;
-    margin-left: 24px;
-    padding-bottom: .25rem;
-  
-    &:first-child {
-      margin: 0;
-    }
-  
-    &.active {
-      border-bottom: 2px solid white;
-    }
-  
-    &.btn {
-      background: rgba(255, 255, 255, .15);
+
+  &.active {
+    border-bottom: 2px solid white;
+  }
+
+  &.btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 0px solid transparent;
+    border-radius: 64px;
+    color: white;
+    padding: 12px 16px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
       border: 0px solid transparent;
-      border-radius: 64px;
-      color: white;
-      padding: 12px 16px;
-  
-      &:hover {
-        background: rgba(255, 255, 255, .25);
-        border: 0px solid transparent;
-      }
-  
-      &:active {
-        background: rgba(255, 255, 255, .35);
-      }
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, 0.35);
     }
   }
-  
+}
 
 // HEADER STYLE
 .header {
-    margin-top: 128px;
-    margin-bottom: 256px;
-    flex-direction: column;
-  
-    a {
-      display: flex;
-      font-size: 1.375rem;
-      line-height: calc(1.5rem * 1.375rem);
-      margin-right: auto;
-      margin-top: 1rem;
-    }
-  
-   
+  margin-top: 128px;
+  margin-bottom: 256px;
+  flex-direction: column;
+
+  a {
+    display: flex;
+    font-size: 1.375rem;
+    line-height: calc(1.5rem * 1.375rem);
+    margin-right: auto;
+    margin-top: 1rem;
   }
-  
-  h1 {
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: calc(1.5rem * 2rem);
+}
+
+h2 {
+  font-size: 1.375rem;
+  line-height: calc(1.5rem * 1.375rem);
+  font-weight: normal;
+  max-width: 512px;
+}
+
+.headline {
+  font-size: 2rem;
+  line-height: calc(1.5rem * 2rem);
+}
+
+.split-view {
+  h3 {
     font-size: 2rem;
     line-height: calc(1.5rem * 2rem);
   }
-  
-  h2 {
+
+  h4 {
     font-size: 1.375rem;
     line-height: calc(1.5rem * 1.375rem);
     font-weight: normal;
-    max-width: 512px;
   }
-  
-  .headline {
-    font-size: 2rem;
-    line-height: calc(1.5rem * 2rem);
-  }
-  
-  .split-view {
-    h3 {
-      font-size: 2rem;
-      line-height: calc(1.5rem * 2rem);
-    }
-  
-    h4 {
-      font-size: 1.375rem;
-      line-height: calc(1.5rem * 1.375rem);
-      font-weight: normal;
-    }
-  }
-    
+}
+
 //   new style
 
 body {
-    background: url('../../img/background.jpg')
+  background: url("../../img/background.jpg");
 }
 
 #navName {
@@ -172,123 +172,125 @@ body {
 }
 
 #cardBackground {
-    background: rgba(255, 255, 255, .7);
-    border-radius: 20px;
-    color: black;
-    padding: 5em;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  color: black;
+  padding: 5em;
 }
 
 #form {
-   margin: auto;
-   width: 100%;
+  margin: auto;
+  width: 100%;
 }
 
 #titleCard {
-    background: rgba(255, 255, 255, .7);
-    border-radius: 20px;
-    color: black;
-    padding: 5em;
-    margin-bottom: 5em;
-    width: 60%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  color: black;
+  padding: 5em;
+  margin-bottom: 5em;
+  width: 60%;
 }
 
 #skills {
-  float: left
+  float: left;
 }
-#navAside{
+#navAside {
   display: inline-table;
 }
-#workCardBackground{
-    margin: auto;
-    background: rgba(255, 255, 255, .6);
-    border-radius: 20px;
-    color: black;
-    padding: 2em;
-    // max-width: 75%;
-    // position: relative
-}
-
-#blogCardBackground{
+#workCardBackground {
   margin: auto;
-    background: rgba(255, 255, 255, .6);
-    border-radius: 20px;
-    color: black;
-    padding: 2em;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  color: black;
+  padding: 2em;
+  // max-width: 75%;
+  // position: relative
 }
 
-#topSpacing{
-    margin-top: 5em;
-    margin-left: 5em;
-    margin-right: 5em;
+#blogCardBackground {
+  margin: auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  color: black;
+  padding: 2em;
+}
+
+#topSpacing {
+  margin-top: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 #center {
 }
 
-// ******* Animations 
+// ******* Animations
 @keyframes fadeOutDown {
-    from {
-      opacity: 1;
-      transform: none;
-    }
-  
-    to {
-      opacity: 0;
-      transform: translate3d(0, 100px, 0);
-    }
-  }
-  
-  @keyframes uppy {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100px, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
-  }
-  
-  .fadeIn {
-    animation-duration: 10000ms;
-    animation-name: fadeIn;
-  }
-  
-  .uppy {
-    animation-duration: 500ms;
-    animation-name: uppy;
+  from {
+    opacity: 1;
+    transform: none;
   }
 
-  #uppySlow {
-    animation-duration: 10000ms;
-    animation-name: uppy;
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
   }
-  #uppyMediumSlow {
-    animation-duration: 3000ms;
-    animation-name: uppy;
+}
+
+@keyframes uppy {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
   }
-  
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+
+.fadeIn {
+  animation-duration: 300ms;
+  animation-name: fadeIn;
+}
+
+.uppy {
+  animation-duration: 500ms;
+  animation-name: uppy;
+}
+
+#uppySlow {
+  animation-duration: 300ms;
+  animation-name: uppy;
+}
+#uppyMediumSlow {
+  animation-duration: 300ms;
+  animation-name: uppy;
+}
+
 // MOBILE
 @media only screen and (max-width: 480px) {
-  .container, .container.small, .container.full {
+  .container,
+  .container.small,
+  .container.full {
     lost-center: 500px;
     padding: 0 20px;
   }
@@ -297,12 +299,12 @@ body {
     padding: 0;
   }
 
-  [class^='col-'], .split-view aside {
+  [class^="col-"],
+  .split-view aside {
     lost-column: 12/12;
     lost-offset: 0/12;
   }
 }
-
 
 @media only screen and (max-width: 720px) {
   nav .container aside {
@@ -310,189 +312,185 @@ body {
     display: grid;
   }
 
- #navName {
-   margin-left: 0em;
- }
+  #navName {
+    margin-left: 0em;
+  }
 
-  #app>div>nav>section>aside:first-child > a{
+  #app > div > nav > section > aside:first-child > a {
     line-height: 1.5;
     font-weight: 700;
   }
 
-  footer a.btn:hover, nav a.btn {
+  footer a.btn:hover,
+  nav a.btn {
     margin-left: 20px;
   }
-
 
   footer .container aside {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
-    clear: both
+    clear: both;
   }
 
-  footer a, footer a:first-child {
+  footer a,
+  footer a:first-child {
     margin: 0 12px 12px;
   }
 
-    #titleCard{
+  #titleCard {
     width: 100%;
-    background: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     color: black;
     padding: 2em;
     margin-bottom: 5em;
-   
   }
   #skills {
-   float: none;
-   margin: auto;
-   padding-bottom: 2em;
-   max-width: 100%;
-   width: 100%;
- }
- .five {
-   margin: auto;
-   padding-top: 2em;
- }
- #workCardBackground{
-   margin: auto;
-   background: rgba(255, 255, 255, .6);
-   border-radius: 20px;
-   color: black;
-   padding: 2em;
-}
-
-#blogCardBackground{
-  margin: auto;
-    background: rgba(255, 255, 255, .6);
+    float: none;
+    margin: auto;
+    padding-bottom: 2em;
+    max-width: 100%;
+    width: 100%;
+  }
+  .five {
+    margin: auto;
+    padding-top: 2em;
+  }
+  #workCardBackground {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
     color: black;
     padding: 2em;
-}
+  }
 
- #cardBackground {
-   background: rgba(255, 255, 255, .7);
-   border-radius: 20px;
-   color: black;
-   margin: 1em;
-   padding: 2em;
-}
+  #blogCardBackground {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    color: black;
+    padding: 2em;
+  }
 
- #topSpacing{
-   margin-top: 0;
-   margin-left: 0;
-   margin-right: 0;
- }
- #navAside{
-   display: grid;
-   margin-right: 0em;
- }
+  #cardBackground {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    color: black;
+    margin: 1em;
+    padding: 2em;
+  }
+
+  #topSpacing {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #navAside {
+    display: grid;
+    margin-right: 0em;
+  }
 }
 @media only screen and (max-width: 1100px) {
-  
-   
- .five {
-   margin: auto;
-   padding-top: 2em;
- }
- #workCardBackground{
-   margin: auto;
-   background: #ffffff99;
-   border-radius: 20px;
-   color: black;
-   padding: 2em;
-}
-#blogCardBackground{
-  margin: auto;
-    background: rgba(255, 255, 255, .6);
+  .five {
+    margin: auto;
+    padding-top: 2em;
+  }
+  #workCardBackground {
+    margin: auto;
+    background: #ffffff99;
     border-radius: 20px;
     color: black;
     padding: 2em;
-}
-
+  }
+  #blogCardBackground {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    color: black;
+    padding: 2em;
+  }
 }
 @media only screen and (max-width: 480px) {
-  
-     nav .container aside {
-       padding-bottom: 20px;
-       display: grid;
-     }
-
-    #navName {
-      margin-left: 0em;
-    }
-
-     #app>div>nav>section>aside:first-child > a{
-       line-height: 1.5;
-       font-weight: 700;
-     }
-
-     footer a.btn:hover, nav a.btn {
-       margin-left: 20px;
-     }
-
-   
-     footer .container aside {
-       display: flex;
-       flex-wrap: wrap;
-       padding-bottom: 20px;
-       clear: both
-     }
-   
-     footer a, footer a:first-child {
-       margin: 0 12px 12px;
-     }
-
-       #titleCard{
-       width: 100%;
-       background: rgba(255, 255, 255, .7);
-       border-radius: 20px;
-       color: black;
-       padding: 1.5em;
-       margin-bottom: 5em;
-      
-     }
-     #skills {
-      float: none;
-      margin: auto;
-      padding-bottom: 2em;
-      max-width: 100%;
-      width: 100%;
-    }
-    .five {
-      margin: auto;
-      padding-top: 2em;
-    }
-    #workCardBackground{
-      margin: auto;
-      background: rgba(255, 255, 255, .6);
-      border-radius: 20px;
-      color: black;
-      padding: 2em;
+  nav .container aside {
+    padding-bottom: 20px;
+    display: grid;
   }
-  #blogCardBackground{
+
+  #navName {
+    margin-left: 0em;
+  }
+
+  #app > div > nav > section > aside:first-child > a {
+    line-height: 1.5;
+    font-weight: 700;
+  }
+
+  footer a.btn:hover,
+  nav a.btn {
+    margin-left: 20px;
+  }
+
+  footer .container aside {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    clear: both;
+  }
+
+  footer a,
+  footer a:first-child {
+    margin: 0 12px 12px;
+  }
+
+  #titleCard {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    color: black;
+    padding: 1.5em;
+    margin-bottom: 5em;
+  }
+  #skills {
+    float: none;
     margin: auto;
-    background: rgba(255, 255, 255, .6);
+    padding-bottom: 2em;
+    max-width: 100%;
+    width: 100%;
+  }
+  .five {
+    margin: auto;
+    padding-top: 2em;
+  }
+  #workCardBackground {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
     color: black;
     padding: 2em;
   }
-    #cardBackground {
-      background: rgba(255, 255, 255, .7);
-      border-radius: 20px;
-      color: black;
-      margin: 1em;
-      padding: 2em;
+  #blogCardBackground {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    color: black;
+    padding: 2em;
+  }
+  #cardBackground {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    color: black;
+    margin: 1em;
+    padding: 2em;
   }
 
-    #topSpacing{
-      margin-top: 0;
-      margin-left: 0;
-      margin-right: 0;
-    }
-    #navAside{
-      display: grid;
-      margin-right: 0em;
-    }
-   }
+  #topSpacing {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #navAside {
+    display: grid;
+    margin-right: 0em;
+  }
+}

@@ -1,74 +1,63 @@
-const webpack = require('webpack')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const SitemapPlugin = require('sitemap-webpack-plugin')
-const DotenvWebpack = require('dotenv-webpack')
-const UglifyPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require("webpack");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const SitemapPlugin = require("sitemap-webpack-plugin");
+const DotenvWebpack = require("dotenv-webpack");
+const UglifyPlugin = require("uglifyjs-webpack-plugin");
 
-const isProd = process.env.NODE_ENV === 'production'
-const chunkFile = isProd ? '[name].[chunkhash]' : '[name]'
-const hashFile = isProd ? '[name].[hash:5]' : '[name]'
-
-
-
+const isProd = process.env.NODE_ENV === "production";
+const chunkFile = isProd ? "[name].[chunkhash]" : "[name]";
+const hashFile = isProd ? "[name].[hash:5]" : "[name]";
 
 const DotenvPlugin = isProd
   ? new webpack.DefinePlugin({
-    'process.env': {
-      GRAPHQL_ENDPOINT: JSON.stringify(process.env.GRAPHQL_ENDPOINT),
-      GOOGLE_ANALYTICS: JSON.stringify(process.env.GOOGLE_ANALYTICS),
-    },
-  })
-  : new DotenvWebpack()
-
-
-
+      "process.env": {
+        GRAPHQL_ENDPOINT: JSON.stringify(process.env.GRAPHQL_ENDPOINT),
+        GOOGLE_ANALYTICS: JSON.stringify(process.env.GOOGLE_ANALYTICS)
+      }
+    })
+  : new DotenvWebpack();
 
 const htmlConfig = {
-  title: 'Gavin Thomas',
-  favicon: 'src/img/favicon.png',
-  template: 'src/index.ejs',
-}
+  title: "Gavin Thomas",
+  favicon: "src/img/favicon.png",
+  template: "src/index.ejs"
+};
 
 const htmlConfig404 = Object.assign({}, htmlConfig, {
-  filename: '404.html',
-})
+  filename: "404.html"
+});
 
-const routes = [
-  '/',
-  '/about',
-  '/contact',
-
-]
+const routes = ["/", "/about", "/contact"];
 
 module.exports = {
-  devtool: isProd ? 'nosources-source-map' : undefined,
+  devtool: isProd ? "nosources-source-map" : "eval",
 
   devServer: {
-    contentBase: './',
-    stats: 'errors-only',
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    contentBase: "./",
+    stats: "errors-only",
+    headers: { "Access-Control-Allow-Origin": "*" }
   },
 
   entry: {
-    app: ['./src/javascripts/index.js'],
+    app: ["./src/javascripts/index.js"],
     vendor: [
-      'axios',
-      'lost',
-      'prop-types',
-      'react-dom',
-      'react-ga',
-      'react-router-dom',
-      'react-svg-inline',
-      'react',
-    ],
+      "axios",
+      "lost",
+      "prop-types",
+      "react-dom",
+      "react-ga",
+      "react-router-dom",
+      "react-svg-inline",
+      "react"
+    ]
   },
 
   output: {
     filename: `javascripts/${chunkFile}.js`,
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/',
+    path: path.join(__dirname, "dist"),
+    publicPath: "/"
   },
 
   module: {
@@ -76,94 +65,94 @@ module.exports = {
       {
         test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader"
       },
 
       {
         test: /\.(scss|sass|css)$/i,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 minimize: true,
                 config: {
-                  path: 'postcss.config.js',
-                },
-              },
+                  path: "postcss.config.js"
+                }
+              }
             },
-            'postcss-loader',
-            'sass-loader',
-          ],
-        }),
+            "postcss-loader",
+            "sass-loader"
+          ]
+        })
       },
       {
         test: /\.(jpg|jpeg|png|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: `[path]${hashFile}.[ext]`,
-            },
-          },
-        ],
+              name: `[path]${hashFile}.[ext]`
+            }
+          }
+        ]
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
-              name: `[path]${chunkFile}.[ext]`,
-            },
-          },
-        ],
+              name: `[path]${chunkFile}.[ext]`
+            }
+          }
+        ]
       },
       {
         test: /\.(mov|mp4)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
+              name: "[name].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
-        loader: 'raw-loader',
-      },
-    ],
+        loader: "raw-loader"
+      }
+    ]
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
-    modules: ['node_modules'],
+    extensions: [".js", ".jsx", ".scss"],
+    modules: ["node_modules"],
     alias: {
-      img: path.join(__dirname, 'src/img'),
-      components: path.join(__dirname, 'src/javascripts/components'),
-      clients: path.join(__dirname, 'src/javascripts/clients'),
-      pages: path.join(__dirname, 'src/javascripts/pages'),
-      utils: path.join(__dirname, 'src/javascripts/utils'),
-    },
+      img: path.join(__dirname, "src/img"),
+      components: path.join(__dirname, "src/javascripts/components"),
+      clients: path.join(__dirname, "src/javascripts/clients"),
+      pages: path.join(__dirname, "src/javascripts/pages"),
+      utils: path.join(__dirname, "src/javascripts/utils")
+    }
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-      },
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
     }),
     new UglifyPlugin(),
 
     new ExtractTextPlugin(`stylesheets/${chunkFile}.css`),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: "vendor"
     }),
     new HtmlWebpackPlugin(htmlConfig),
     new HtmlWebpackPlugin(htmlConfig404),
-    DotenvPlugin,
-  ],
-}
+    DotenvPlugin
+  ]
+};
