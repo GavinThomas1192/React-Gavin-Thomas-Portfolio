@@ -36,7 +36,7 @@ const styles = theme => ({
 class RecipeReviewCard extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { expanded: false, fontSize: 24, cardOpacity: 1, shadow: 24, toggleDialogBox: false, imageSize: 194, fadeInSlow: true }
+        this.state = { cardElevation: 24, expanded: false, fontSize: 24, cardOpacity: 1, shadow: 24, toggleDialogBox: false, imageSize: 194, fadeInSlow: true }
     }
 
     componentDidMount() {
@@ -51,12 +51,13 @@ class RecipeReviewCard extends React.Component {
     
    
     onMouseOver = () => {
-        // this.setState({  })
+        this.setState({cardElevation: 5  })
         // this.handleShowDialogBox()
+        // alert('works')
 
     }
     onMouseOut = () => {
-        // this.setState({ cardOpacity: 0.75, shadow: 24 })
+        this.setState({ cardElevation: 24 })
         // this.handleShowDialogBox()
     }
     handleShowDialogBox = () => {
@@ -71,18 +72,18 @@ class RecipeReviewCard extends React.Component {
     render() {
         const { classes } = this.props
         return (
-
-
             <div id="blogCardBackground">
                 {this.state.toggleDialogBox ? <WorkDialog project={this.props.project} show={'yes'} /> : undefined}
-                <Card style={{ opacity: this.state.cardOpacity, cursor: 'pointer' }}
-                    elevation={24}
+                <Card 
+                    onMouseOver={this.onMouseOver} 
+                    onMouseOut={this.onMouseOut}
+                    style={{ opacity: this.state.cardOpacity, cursor: 'pointer' }}
+                    elevation={this.state.cardElevation}
                     className={classes.card}
                     onMouseOver={this.onMouseOver}
                     onMouseOut={this.onMouseOut}
                     onClick={this.handleShowDialogBox}
                     square={false}
-
                 >
                     <CardHeader
                         title={this.props.project.title}
@@ -99,17 +100,11 @@ class RecipeReviewCard extends React.Component {
                             {this.props.project.description}
                         </Typography>
                     </CardContent>
-
-
                 </Card>
 
             </div>
         )
     }
 }
-
-// RecipeReviewCard.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
 
 export default withStyles(styles)(RecipeReviewCard)

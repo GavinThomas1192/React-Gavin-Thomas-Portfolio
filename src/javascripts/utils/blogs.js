@@ -18,7 +18,7 @@ const blogs = [
     ],
     media:
       "http://www.zsoltnagy.eu/javascript-theory-quiz-crack-the-es6-interview/?utm_content=bufferf3094&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer",
-    // pictures: require("../../img/blogPics/victoryGraph.jpg"),
+    // pictures: require("../../img/blogPics/victoryGraph.png"),
     codeAnswerText: "More supplemental information",
     code: (
       <SyntaxHighlighter language="javascript" style={atomOneDark}>
@@ -111,7 +111,7 @@ const blogs = [
     ],
     media:
       "http://www.zsoltnagy.eu/javascript-theory-quiz-crack-the-es6-interview/?utm_content=bufferf3094&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer",
-    pictures: require("../../img/blogPics/victoryGraph.jpg"),
+    pictures: require("../../img/blogPics/victoryGraph.png"),
     codeAnswerText: "More supplemental information",
     code: (
       <SyntaxHighlighter language="javascript" style={atomOneDark}>

@@ -41,7 +41,6 @@ export default class NewHome extends React.Component {
                   Forging dynamic solutions, fueled by a passion for code.
                 </h2>
               </Typography>
-              {/* <Link to="/contact" ><Button label="Message me" /> </Link> */}
             </div>
           </Paper>
         </section>
@@ -52,16 +51,16 @@ export default class NewHome extends React.Component {
               <div style={{ display: 'inline-flex' }}>
                 <p style={{ paddingRight: '3em' }}>
                   <ul>
-                    <li>Javascript (ES6 & 7)</li>
+                    <li>Javascript (ES7)</li>
                     <li>React</li>
                     <li>React-Native</li>
-                    <li>HTML5</li>
-                    <li>CSS/SCSS</li>
+                    <li>Redux</li>
+                    <li>Sagas</li>
                     <li>Webpack</li>
-                    <li>gulp</li>
-                    <li>Node.js</li>
+                    <li>SASS</li>
+                    <li>Node</li>
+                    <li>Node CQRS</li>
                     <li>Firebase</li>
-                    <li>Jest</li>
                   </ul>
                 </p>
                 <p>
@@ -84,15 +83,16 @@ export default class NewHome extends React.Component {
             ) : (
               <p>
                 <ul>
-                  <li>Javascript (ES6 & 7)</li>
-                  <li>React</li>
-                  <li>React-Native</li>
-                  <li>HTML5</li>
-                  <li>CSS/SCSS</li>
-                  <li>Webpack</li>
-                  <li>Gulp</li>
-                  <li>Node.js</li>
-                  <li>Firebase</li>
+                    <li>Javascript (ES7)</li>
+                    <li>React</li>
+                    <li>React-Native</li>
+                    <li>Redux</li>
+                    <li>Sagas</li>
+                    <li>Webpack</li>
+                    <li>SASS</li>
+                    <li>Node</li>
+                    <li>Node CQRS</li>
+                    <li>Firebase</li>
                 </ul>
                 <ul>
                   <li>Test Driven Development</li>

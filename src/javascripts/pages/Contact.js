@@ -47,7 +47,7 @@ export default class Contact extends React.Component {
     message: formData.message.length > 0,
   });
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault()
 
     const { name, email, message } = this.state
@@ -60,27 +60,22 @@ export default class Contact extends React.Component {
       v => validateForm[v] === true
     )
     if (valid) {
-      const data = {
-        name,
-        email,
-        message,
-      }
-
-      axios
-        .post(formSpree, {
-          data,
-        })
-        .then(function() {
-          this.setState({
-            submitted: true,
-            name: '',
-            email: '',
-            message: '',
+      try {
+        const data = {
+          name,
+          email,
+          message,  
+          }
+        await axios.post(formSpree, {data})
+            this.setState({
+              submitted: true,
+              name: '',
+              email: '',
+              message: '',
           })
-        })
-        .catch(error => {
-          console.log('errorrrr', error)
-        })
+      }
+      catch(error){() => console.log('error', error)}
+       
 
       this.setState({
         submitted: true,

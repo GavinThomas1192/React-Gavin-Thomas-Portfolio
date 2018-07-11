@@ -26,7 +26,7 @@ export default class MyWork extends React.Component {
         return (
             <div className="uppy">
                 <section className="container">
-                    <h3 className="col-1-of-1 headline">Projects</h3>
+                    <h3 className="col-1-of-1 headline">Work</h3>
                 </section>
                 <section id="topSpacing">
                     <Grid container spacing={24} justify={'center'}>
@@ -38,7 +38,7 @@ export default class MyWork extends React.Component {
                                     <AdvancedGridList feat={'yes'} project={ele} />
                                 </Grid>
                                 :
-                                < Grid id="uppySlow" item xs={4}>
+                                < Grid id="uppySlow" item xs={5}>
                                     <AdvancedGridList feat={'no'} project={ele} />
                                 </Grid>
 

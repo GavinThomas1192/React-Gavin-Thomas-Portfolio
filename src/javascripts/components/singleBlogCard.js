@@ -26,18 +26,9 @@ import ReactGA from 'react-ga';
 
 const FacebookIcon = generateShareIcon('facebook')
 const TwitterIcon = generateShareIcon('twitter')
-const TelegramIcon = generateShareIcon('telegram')
-const WhatsappIcon = generateShareIcon('whatsapp')
 const GooglePlusIcon = generateShareIcon('google')
 const LinkedinIcon = generateShareIcon('linkedin')
-const PinterestIcon = generateShareIcon('pinterest')
-const VKIcon = generateShareIcon('vk')
-const OKIcon = generateShareIcon('ok')
-const RedditIcon = generateShareIcon('reddit')
-const TumblrIcon = generateShareIcon('tumblr')
-const LivejournalIcon = generateShareIcon('livejournal')
-const MailruIcon = generateShareIcon('mailru')
-const EmailIcon = generateShareIcon('email')
+
 
 const styles = theme => ({
   card: {
