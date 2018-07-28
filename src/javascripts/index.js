@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 import NewHome from './pages/newHome'
 import MyWork from './pages/myWork'
-import SingleBlogCard from './components/singleBlogCard'
+import SingleBlogCard from './components/SingleBlogCard'
 import Contact from './pages/Contact'
 import Blog from './pages/blog'
 import PageNotFound from './pages/PageNotFound'
