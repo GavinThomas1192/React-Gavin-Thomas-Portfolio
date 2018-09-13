@@ -13,6 +13,8 @@ import SingleBlogCard from './components/singleBlogCard'
 import Contact from './pages/Contact'
 import Blog from './pages/blog'
 import PageNotFound from './pages/PageNotFound'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+
 
 
 ReactGA.initialize('UA-112795120-1')
@@ -39,6 +41,7 @@ const Root = () =>
         <Route path="/contact" component={Contact} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={SingleBlogCard} />
+        <Route path="/privacy" component={PrivacyPolicy} />
         {/* <Route path="/work/:slug" component={Client} /> */}
         <Route component={PageNotFound} />
       </Switch>

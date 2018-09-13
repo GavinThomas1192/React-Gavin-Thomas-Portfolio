@@ -24,15 +24,6 @@ export default class Contact extends React.Component {
     ReactGA.set({ page: location.pathname })
     ReactGA.pageview(this.props.history.location.pathname)
     document.title = 'Contact';
-    const config = {
-      apiKey: 'AIzaSyDSslYWMNOKBctjgImLmEXoo47owiuEWvg',
-      authDomain: 'react-portfolio-18a58.firebaseapp.com',
-      databaseURL: 'https://react-portfolio-18a58.firebaseio.com',
-      projectId: 'react-portfolio-18a58',
-      storageBucket: 'react-portfolio-18a58.appspot.com',
-      messagingSenderId: '453774721585',
-    }
-    firebase.initializeApp(config)
   }
 
   handleInputChange = name => event => {
@@ -64,18 +55,18 @@ export default class Contact extends React.Component {
         const data = {
           name,
           email,
-          message,  
-          }
-        await axios.post(formSpree, {data})
-            this.setState({
-              submitted: true,
-              name: '',
-              email: '',
-              message: '',
-          })
+          message,
+        }
+        await axios.post(formSpree, { data })
+        this.setState({
+          submitted: true,
+          name: '',
+          email: '',
+          message: '',
+        })
       }
-      catch(error){() => console.log('error', error)}
-       
+      catch (error) { () => console.log('error', error) }
+
 
       this.setState({
         submitted: true,
@@ -136,13 +127,13 @@ export default class Contact extends React.Component {
           {this.state.errors ? (
             <h1>Whoops! Lets fill out all the options...</h1>
           ) : (
-            undefined
-          )}
+              undefined
+            )}
           {this.state.submitted ? (
             <h1>Thanks! I'll be in touch with you soon!</h1>
           ) : (
-            undefined
-          )}
+              undefined
+            )}
           <Button onClick={this.handleSubmit} raised color="primary">
             <SendIcon />
           </Button>

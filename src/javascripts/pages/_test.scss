@@ -24,8 +24,9 @@ a {
   transition: 0.2s all ease-in-out;
 }
 .container {
-  lost-center: 1100px;
-  padding: 0 20px;
+  margin: 0 5em 0 5em;
+  // lost-center: 1100px;
+  // padding: 0 20px;
 
   &.small {
     lost-center: 700px;
@@ -168,10 +169,11 @@ body {
 }
 
 #navName {
-  margin-left: -5em;
+  // margin-left: -5em;
 }
 
 #cardBackground {
+  display: flex;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   color: black;
@@ -218,8 +220,8 @@ body {
 
 #topSpacing {
   margin-top: 5em;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 15em;
+  margin-right: 15em;
 }
 
 #center {
@@ -306,14 +308,14 @@ body {
   }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 820px) {
   nav .container aside {
     padding-bottom: 20px;
     display: grid;
   }
 
   #navName {
-    margin-left: 0em;
+    // margin-left: 0em;
   }
 
   #app > div > nav > section > aside:first-child > a {
@@ -381,17 +383,22 @@ body {
     padding: 2em;
   }
 
+  #navAside {
+    display: grid;
+    margin-right: 0em;
+  }
   #topSpacing {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
   }
-  #navAside {
-    display: grid;
-    margin-right: 0em;
-  }
 }
 @media only screen and (max-width: 1100px) {
+  #topSpacing {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .five {
     margin: auto;
     padding-top: 2em;
@@ -418,7 +425,7 @@ body {
   }
 
   #navName {
-    margin-left: 0em;
+    // margin-left: 0em;
   }
 
   #app > div > nav > section > aside:first-child > a {
