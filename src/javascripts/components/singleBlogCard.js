@@ -1,13 +1,9 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
-import WorkDialog from './workDialog';
-import { Link } from 'react-router-dom';
 import Card, {
   CardHeader,
-  CardMedia,
   CardContent,
-  CardActions,
 } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import IconButton from 'material-ui/IconButton';
@@ -16,9 +12,7 @@ import classnames from 'classnames';
 import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
 import RemoveIcon from 'material-ui-icons/Remove';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/styles/hljs';
-// import { Helmet } from "react-helmet";
+
 
 import blogs from '../utils/blogs';
 import Typography from 'material-ui/Typography';
@@ -60,15 +54,8 @@ const {
   GooglePlusShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  TelegramShareButton,
-  WhatsappShareButton,
-  PinterestShareButton,
-  VKShareButton,
-  OKShareButton,
   RedditShareButton,
-  TumblrShareButton,
-  LivejournalShareButton,
-  EmailShareButton,
+
 } = ShareButtons
 
 const {
@@ -100,38 +87,28 @@ class RecipeReviewCard extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.state)
     ReactGA.set({ page: location.pathname })
     ReactGA.pageview(this.props.history.location.pathname)
-    blogs.map(ele => {
-      ele.url == this.props.match.params.slug
-        ? this.setState({ singleBlog: ele }, function() {
-            document.title = `${this.state.singleBlog.title}`
-          })
-        : undefined
-    })
-
+    this.setSingleBlog()
     window.addEventListener('resize', () => {
-      {
-        window.innerWidth < 720
-          ? this.setState({ widths: {}, fontSize: 12 })
-          : this.setState({
-              widths: { maxWidth: '75%', width: '100%' },
-              fontSize: 16,
-            })
-      }
-      // this.setState({ mediaQuery: true })
-    })
-
-    {
       window.innerWidth < 720
         ? this.setState({ widths: {}, fontSize: 12 })
-        : undefined
-    }
+        : this.setState({
+          widths: { maxWidth: '75%', width: '100%' },
+          fontSize: 16,
+        })
+    })
+
+    window.innerWidth < 720 && this.setState({ widths: {}, fontSize: 12 })
   }
 
-  componentDidUpdate() {
-    // console.log(this.state)
+  setSingleBlog() {
+    blogs.map(ele => {
+      ele.url == this.props.match.params.slug &&
+        this.setState({ singleBlog: ele }, () => {
+          document.title = `${this.state.singleBlog.title}`
+        })
+    })
   }
 
   handleExpand = () => {
@@ -152,6 +129,7 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props
+    const { singleBlog } = this.state
     return (
       <div style={this.state.widths} id="workCardBackground">
         <Card
@@ -161,25 +139,23 @@ class RecipeReviewCard extends React.Component {
           square={false}
         >
           <CardHeader
-            title={this.state.singleBlog.title}
-            subheader={this.state.singleBlog.date}
+            title={singleBlog.title}
+            subheader={singleBlog.date}
           />
 
-          {this.state.singleBlog.bodyTop ? (
+          {singleBlog.bodyTop && (
             <CardContent>
               <Typography
                 style={{ fontSize: this.state.fontSize }}
                 component="h4"
               >
-                {this.state.singleBlog.bodyTop}
+                {singleBlog.bodyTop}
               </Typography>
             </CardContent>
-          ) : (
-            undefined
           )}
 
           {/* ******* if code answer show this block with answer            */}
-          {this.state.singleBlog.media && this.state.singleBlog.codeAnswer ? (
+          {singleBlog.media && singleBlog.codeAnswer ? (
             <div>
               <Button
                 fab
@@ -210,14 +186,14 @@ class RecipeReviewCard extends React.Component {
               </Button>
               <CardContent>
                 <Typography style={this.state.codeTextSize} component="h4">
-                  {/* <SyntaxHighlighter language='javascript' style={atomOneDark}>{this.state.singleBlog.code}</SyntaxHighlighter> */}
-                  {this.state.singleBlog.code}
+                  {/* <SyntaxHighlighter language='javascript' style={atomOneDark}>{singleBlog.code}</SyntaxHighlighter> */}
+                  {singleBlog.code}
                 </Typography>
                 <Typography
                   style={{ fontSize: 12, paddingTop: '1em' }}
                   component="h4"
                 >
-                  {this.state.singleBlog.codeAnswerText}
+                  {singleBlog.codeAnswerText}
                 </Typography>
               </CardContent>
 
@@ -264,28 +240,28 @@ class RecipeReviewCard extends React.Component {
                     <RemoveIcon />
                   </Button>
                   <Typography style={this.state.codeTextSize} component="h4">
-                    {this.state.singleBlog.codeAnswer}
+                    {singleBlog.codeAnswer}
                   </Typography>
                 </CardContent>
               </Collapse>
               {/* * ***********END CODE ANSWER  */}
             </div>
           ) : (
-            <div>
-              <CardContent>
-                <Typography style={this.state.codeTextSize} component="h4">
-                  {/* <SyntaxHighlighter language='javascript' style={atomOneDark}>{this.state.singleBlog.code}</SyntaxHighlighter> */}
-                  {this.state.singleBlog.code}
-                </Typography>
-              </CardContent>
-            </div>
-          )}
+              <div>
+                <CardContent>
+                  <Typography style={this.state.codeTextSize} component="h4">
+                    {/* <SyntaxHighlighter language='javascript' style={atomOneDark}>{singleBlog.code}</SyntaxHighlighter> */}
+                    {singleBlog.code}
+                  </Typography>
+                </CardContent>
+              </div>
+            )}
           <CardContent>
             <Typography
               style={{ fontSize: this.state.fontSize }}
               component="h4"
             >
-              {this.state.singleBlog.body}
+              {singleBlog.body}
             </Typography>
           </CardContent>
           <CardContent>
@@ -293,17 +269,17 @@ class RecipeReviewCard extends React.Component {
               style={{ fontSize: this.state.fontSize }}
               component="h4"
             >
-              {this.state.singleBlog.body2}
+              {singleBlog.body2}
             </Typography>
           </CardContent>
 
-          {this.state.singleBlog.links ? (
+          {singleBlog.links && (
             <CardContent>
               <Typography style={{ fontSize: 12 }} component="h4">
-                {this.state.singleBlog.links.map(ele => (
+                {singleBlog.links.map(ele => (
                   <Typography style={{ fontSize: 12 }} component="h4">
                     <a
-                      href={this.state.singleBlog.links}
+                      href={singleBlog.links}
                       rel="noreferrer noopener"
                       target="_blank"
                     >
@@ -313,8 +289,6 @@ class RecipeReviewCard extends React.Component {
                 ))}
               </Typography>
             </CardContent>
-          ) : (
-            undefined
           )}
 
           <CardContent>
@@ -323,43 +297,43 @@ class RecipeReviewCard extends React.Component {
               component="h4"
             >
               <TwitterShareButton
-                url={`https://gthomas.me/blog/${this.state.singleBlog.url}`}
-                title={this.state.singleBlog.title}
+                url={`https://gthomas.me/blog/${singleBlog.url}`}
+                title={singleBlog.title}
               >
                 <TwitterIcon size={32} round />
               </TwitterShareButton>
 
               <LinkedinShareButton
-                url={`https://gthomas.me/blog/${this.state.singleBlog.url}`}
-                title={this.state.singleBlog.title}
+                url={`https://gthomas.me/blog/${singleBlog.url}`}
+                title={singleBlog.title}
               >
                 <LinkedinIcon size={32} round />
               </LinkedinShareButton>
 
               <FacebookShareButton
-                url={`https://gthomas.me/blog/${this.state.singleBlog.url}`}
-                title={this.state.singleBlog.title}
+                url={`https://gthomas.me/blog/${singleBlog.url}`}
+                title={singleBlog.title}
               >
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
 
               <GooglePlusShareButton
-                url={`https://gthomas.me/blog/${this.state.singleBlog.url}`}
-                title={this.state.singleBlog.title}
+                url={`https://gthomas.me/blog/${singleBlog.url}`}
+                title={singleBlog.title}
               >
                 <GooglePlusIcon size={32} round />
               </GooglePlusShareButton>
 
               <RedditShareButton
-                url={`https://gthomas.me/blog/${this.state.singleBlog.url}`}
-                title={this.state.singleBlog.title}
+                url={`https://gthomas.me/blog/${singleBlog.url}`}
+                title={singleBlog.title}
               >
                 <RedditShareButton size={32} round />
               </RedditShareButton>
             </Typography>
           </CardContent>
 
-          {this.state.singleBlog.pictures ? (
+          {singleBlog.pictures && (
             <div style={{ paddingBottom: '2em' }}>
               <img
                 style={{
@@ -368,11 +342,9 @@ class RecipeReviewCard extends React.Component {
                   maxWidth: '50%',
                   maxHeight: '50%',
                 }}
-                src={this.state.singleBlog.pictures}
+                src={singleBlog.pictures}
               />
             </div>
-          ) : (
-            undefined
           )}
         </Card>
       </div>
@@ -380,8 +352,5 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-// RecipeReviewCard.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
 
 export default withStyles(styles)(RecipeReviewCard)

@@ -1,7 +1,6 @@
 import React from 'react'
 import Grid from 'material-ui/Grid'
-// import ReactGA from 'react-ga' // https://github.com/react-ga/react-ga
-import AdvancedGridList from '../components/blogCard'
+import BlogCard from '../components/BlogCard'
 import blogs from '../utils/blogs'
 import ReactGA from 'react-ga'
 
@@ -15,8 +14,6 @@ export default class Blog extends React.Component {
         this.state = {
             mediaQuery: false,
         }
-        // ReactGA.initialize('UA-112795120-1')
-        // ReactGA.pageview(window.location.pathname)
     }
     componentDidMount() {
         ReactGA.set({ page: location.pathname })
@@ -26,7 +23,6 @@ export default class Blog extends React.Component {
 
         window.addEventListener('resize', () => {
             { window.innerWidth < 1200 ? this.setState({ mediaQuery: true }) : this.setState({ mediaQuery: false }) }
-            // this.setState({ mediaQuery: true })
         })
 
         { window.innerWidth < 1200 ? this.setState({ mediaQuery: true }) : undefined }
@@ -44,7 +40,7 @@ export default class Blog extends React.Component {
 
 
                             <Grid id="uppyMediumSlow" item xs={10}>
-                                <AdvancedGridList params={this.props.match.params} blog={ele} />
+                                <BlogCard params={this.props.match.params} blog={ele} />
                             </Grid>
 
 
