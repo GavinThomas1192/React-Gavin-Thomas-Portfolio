@@ -12,11 +12,11 @@ const hashFile = isProd ? "[name].[hash:5]" : "[name]";
 
 const DotenvPlugin = isProd
   ? new webpack.DefinePlugin({
-      "process.env": {
-        GRAPHQL_ENDPOINT: JSON.stringify(process.env.GRAPHQL_ENDPOINT),
-        GOOGLE_ANALYTICS: JSON.stringify(process.env.GOOGLE_ANALYTICS)
-      }
-    })
+    "process.env": {
+      GRAPHQL_ENDPOINT: JSON.stringify(process.env.GRAPHQL_ENDPOINT),
+      GOOGLE_ANALYTICS: JSON.stringify(process.env.GOOGLE_ANALYTICS)
+    }
+  })
   : new DotenvWebpack();
 
 const htmlConfig = {
@@ -32,7 +32,7 @@ const htmlConfig404 = Object.assign({}, htmlConfig, {
 const routes = ["/", "/about", "/contact"];
 
 module.exports = {
-  devtool: isProd ? "nosources-source-map" : "eval",
+  devtool: isProd ? false : "eval",
 
   devServer: {
     contentBase: "./",

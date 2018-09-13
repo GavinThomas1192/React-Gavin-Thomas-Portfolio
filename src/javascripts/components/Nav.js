@@ -12,6 +12,7 @@ const Nav = () =>
         <NavLink to="/work" className="btn">My Work</NavLink>
         <NavLink to="/contact" className="btn">Contact</NavLink>
         <NavLink to="/blog" className="btn">Blog</NavLink>
+
       </aside>
     </section>
   </nav>

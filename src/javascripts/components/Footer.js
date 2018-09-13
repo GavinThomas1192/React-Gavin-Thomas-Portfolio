@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const networks = {
   GitHub: 'https://github.com/GavinThomas1192',
@@ -15,6 +15,7 @@ const Footer = () =>
       <aside>
         <Link className='btn' to="https://github.com/GavinThomas1192" target="_blank" >Github</Link>
         <Link className='btn' to="https://www.linkedin.com/in/gavinthomas1192/" target="_blank" >LinkedIn</Link>
+        <NavLink to="/privacy" className="btn">Privacy</NavLink>
       </aside>
     </section>
   </footer>
