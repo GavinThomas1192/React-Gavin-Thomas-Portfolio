@@ -34,6 +34,7 @@
   --mediumGray: #333;
   --lightGray: #444;
   --white: #ffffff;
+  --cardBackground: rgba(255, 255, 255, 0.9);
 
   --lightStripes: repeating-linear-gradient(
     45deg,

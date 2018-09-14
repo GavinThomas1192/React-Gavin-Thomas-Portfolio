@@ -1,14 +1,30 @@
 {
-    "presets": [
-        ["env", {"modules": false}],
-        "react"
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
     ],
-    "plugins": [
-        "transform-class-properties"
-        ,["transform-runtime", {
-            "polyfill": false,
-            "regenerator": true
-          }]
-      
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-transform-react-jsx",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from"
+  ],
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "safari 7"
+          ]
+        }
+      }
     ]
+  ]
 }

@@ -81,8 +81,8 @@ export default class NewHome extends React.Component {
                 </p>{' '}
               </div>
             ) : (
-              <p>
-                <ul>
+                <p>
+                  <ul>
                     <li>Javascript (ES7)</li>
                     <li>React</li>
                     <li>React-Native</li>
@@ -93,23 +93,23 @@ export default class NewHome extends React.Component {
                     <li>Node</li>
                     <li>Node CQRS</li>
                     <li>Firebase</li>
-                </ul>
-                <ul>
-                  <li>Test Driven Development</li>
-                  <li>Express</li>
-                  <li>noSQL</li>
-                  <li>MongoDB</li>
-                  <li>Babel</li>
-                  <li>Azure</li>
-                  <li>Docker</li>
-                  <li>AWS</li>
-                  <li>Git</li>
-                  <li>Ember.js</li>
-                  <li>Ruby on Rails</li>
-                  <li>Python</li>
-                </ul>
-              </p>
-            )}
+                  </ul>
+                  <ul>
+                    <li>Test Driven Development</li>
+                    <li>Express</li>
+                    <li>noSQL</li>
+                    <li>MongoDB</li>
+                    <li>Babel</li>
+                    <li>Azure</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
+                    <li>Git</li>
+                    <li>Ember.js</li>
+                    <li>Ruby on Rails</li>
+                    <li>Python</li>
+                  </ul>
+                </p>
+              )}
           </div>
           <div id="skills" className="seven">
             <p>

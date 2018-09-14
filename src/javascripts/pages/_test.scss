@@ -1,4 +1,6 @@
+$card-background: rgba(255, 255, 255, 0.9);
 // OLD style
+
 * {
   margin: 0;
   padding: 0;
@@ -24,19 +26,15 @@ a {
   transition: 0.2s all ease-in-out;
 }
 .container {
-  margin: 0 5em 0 5em;
-  // lost-center: 1100px;
+  margin: 0 10%;
+  // &.small {
+  //   lost-center: 700px;
+  // }
 
-  // padding: 0 20px;
-
-  &.small {
-    lost-center: 700px;
-  }
-
-  &.full {
-    lost-center: 100%;
-    padding: 0;
-  }
+  // &.full {
+  //   lost-center: 100%;
+  //   padding: 0;
+  // }
 }
 .four {
   lost-column: 4/12 flex;
@@ -175,7 +173,7 @@ body {
 
 #cardBackground {
   display: flex;
-  background: rgba(255, 255, 255, 0.7);
+  background: $card-background;
   border-radius: 20px;
   color: black;
   padding: 5em;
@@ -187,7 +185,7 @@ body {
 }
 
 #titleCard {
-  background: rgba(255, 255, 255, 0.7);
+  background: $card-background;
   border-radius: 20px;
   color: black;
   padding: 5em;
@@ -203,7 +201,7 @@ body {
 }
 #workCardBackground {
   margin: auto;
-  background: rgba(255, 255, 255, 0.6);
+  background: $card-background;
   border-radius: 20px;
   color: black;
   padding: 2em;
@@ -213,7 +211,7 @@ body {
 
 #blogCardBackground {
   margin: auto;
-  background: rgba(255, 255, 255, 0.6);
+  background: $card-background;
   border-radius: 20px;
   color: black;
   padding: 2em;
@@ -221,8 +219,8 @@ body {
 
 #topSpacing {
   margin-top: 5em;
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: 13%;
+  margin-right: 13%;
 }
 
 #center {
@@ -343,7 +341,7 @@ body {
 
   #titleCard {
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
@@ -362,7 +360,7 @@ body {
   }
   #workCardBackground {
     margin: auto;
-    background: rgba(255, 255, 255, 0.6);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
@@ -370,14 +368,14 @@ body {
 
   #blogCardBackground {
     margin: auto;
-    background: rgba(255, 255, 255, 0.6);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
   }
 
   #cardBackground {
-    background: rgba(255, 255, 255, 0.7);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     margin: 1em;
@@ -413,11 +411,18 @@ body {
   }
   #blogCardBackground {
     margin: auto;
-    background: rgba(255, 255, 255, 0.6);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
   }
+}
+
+@media only screen and (min-width: 1400px){
+  .container {
+    margin: 0 20%;
+  }
+ 
 }
 @media only screen and (max-width: 480px) {
   nav .container aside {
@@ -453,7 +458,7 @@ body {
 
   #titleCard {
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 1.5em;
@@ -472,24 +477,25 @@ body {
   }
   #workCardBackground {
     margin: auto;
-    background: rgba(255, 255, 255, 0.6);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
   }
   #blogCardBackground {
     margin: auto;
-    background: rgba(255, 255, 255, 0.6);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     padding: 2em;
   }
   #cardBackground {
-    background: rgba(255, 255, 255, 0.7);
+    background: $card-background;
     border-radius: 20px;
     color: black;
     margin: 1em;
     padding: 2em;
+    display: table;
   }
 
   #topSpacing {

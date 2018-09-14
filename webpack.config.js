@@ -37,7 +37,10 @@ module.exports = {
   devServer: {
     contentBase: "./",
     stats: "errors-only",
-    headers: { "Access-Control-Allow-Origin": "*" }
+    headers: { "Access-Control-Allow-Origin": "*" },
+    historyApiFallback: {
+      disableDotRule: true
+    }
   },
 
   entry: {

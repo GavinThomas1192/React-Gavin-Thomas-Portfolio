@@ -10,15 +10,15 @@ import Dialog, {
 } from 'material-ui/Dialog'
 
 class ResponsiveDialog extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          open: false,
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false,
     }
+  }
 
   componentDidMount() {
-      {this.props.show === 'yes' ? this.handleClickOpen() : undefined}
+    { this.props.show === 'yes' ? this.handleClickOpen() : undefined }
   }
 
   handleClickOpen = () => {
@@ -34,9 +34,9 @@ class ResponsiveDialog extends React.Component {
 
     return (
       <div >
-        
+
         <Dialog
-          
+
           fullScreen={fullScreen}
           open={this.state.open}
           onClose={this.handleClose}
@@ -44,7 +44,7 @@ class ResponsiveDialog extends React.Component {
         >
           <DialogTitle id="responsive-dialog-title">{this.props.project.title}</DialogTitle>
           <DialogContent>
-          {/* <DialogContentText>
+            {/* <DialogContentText>
             {this.props.project.video ? 
              
                 <div>
@@ -61,32 +61,33 @@ class ResponsiveDialog extends React.Component {
             }
                
             </DialogContentText> */}
-            <DialogContentText style={{color: 'black'}}>
-                <h3>{this.props.project.stack}</h3><br/>
-                <h4>
-                  {this.props.project.technicalDescription}
-               </h4> 
+            <DialogContentText style={{ color: 'black' }}>
+              <h3>{this.props.project.stack}</h3><br />
+              <h4>
+                {this.props.project.technicalDescription}
+              </h4>
             </DialogContentText>
             <DialogContentText>
               {this.props.project.secondaryPictures.map(ele => (
                 <div>
 
-                <br/>
-                <img src={ele}/>
+                  <br />
+                  <img src={ele} />
                 </div>
               ))}
-               
+
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-             <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} color="primary">
               Close
             </Button>
-            <a href={this.props.project.github} target='_blank'> <Button onClick={this.handleClose} color="primary">
-              Github
+            <a href={this.props.project.github} target='_blank'>
+              <Button onClick={this.handleClose} color="primary">
+                Github
             </Button></a>
             <a href={this.props.project.link} target='_blank' ><Button onClick={this.handleClose} color="primary" autoFocus>
-              Live-Site
+              Link
             </Button></a>
           </DialogActions>
         </Dialog>

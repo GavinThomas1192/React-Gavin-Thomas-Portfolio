@@ -1,6 +1,27 @@
-import babbleVideo from "../../img/babble/babbleFullDemo.mov";
 
 const projects = [
+  {
+    title: "Software Developer - Facet Development - Seattle, WA",
+    description:
+      "Full Stack Software Developer",
+    slug: "facet",
+    stack: "Using: React-Native, React, Node-CQRS, Docker, AWS, and GCP",
+    link: "https://www.facetdev.com/",
+    github: "https://github.com/AttackPattern",
+    img: require("../../img/facetDev/facetDev3.png"),
+    author: "Gavin Thomas",
+    date: "2018-2019",
+    technicalDescription:
+      `Currently operating full time as a full stack developer within a small team of senior developers.\n 
+      We operate on multiple projects at once, within a wide range of technologies.\n
+      Some of these include React, React-Native, Node, Mongo, Mysql, Docker, Kubernetes, Google Cloud and AWS.`,
+    featured: true,
+    secondaryPictures: [
+      require("../../img/facetDev/facetDev3.png"),
+      require("../../img/facetDev/facetDev1.png"),
+      require("../../img/facetDev/facetDev2.png"),
+    ]
+  },
   {
     description:
       "React and React-Native Developer contracted to T-Mobile",
@@ -13,7 +34,7 @@ const projects = [
     author: "Gavin Thomas",
     date: "2018",
     technicalDescription:
-   `I developed major features within upcoming products using React.\n
+      `I developed major features within upcoming products using React.\n
     I introduced new Technology such as React Native and led research to implications of using React native for their mobile stack.\n
     I then developed Rapid Prototype's of their current IOS / Android Applications using React Native from the design team's wireframes.\n 
     While at T-Mobile I worked within numerous technologies such as redux, saga\'s, React, Telecom Backend solutions, etc.`,
@@ -32,14 +53,14 @@ const projects = [
     stack: "Using: React-Native, React, Firebase, Node, and Express",
     link: "https://language-tutor-a1bdd.firebaseapp.com/",
     github: "Private",
-    img: require("../../img/language/lang5.png"),
+    img: require("../../img/language/lang1.png"),
     author: "Gavin Thomas",
     date: "2018",
     technicalDescription:
       "Language tutor was designed and built to be a learning platform with Live video chat, testing progression, and self guided learning. The startup's company, located in South Africa, is part of the Igbo tribe native to South Africa and needed a way to teach and promote their language. Their language, Igbo, was recently was placed on the United Nations endangered languages list. The goal for the application is to provide children from their tribe to learn English, while also teaching Igbo to those tribe members throughout the world.",
     featured: true,
     secondaryPictures: [
-      require("../../img/language/lang1.png"),
+      require("../../img/language/lang5.png"),
       require("../../img/language/lang2.png"),
       require("../../img/language/lang3.png"),
       require("../../img/language/lang4.png")
@@ -83,7 +104,7 @@ const projects = [
   },
   {
     description:
-    "cavnessHR delivers HR to Founders, new business owners and companies with less than 50 employees.",
+      "cavnessHR delivers HR to Founders, new business owners and companies with less than 50 employees.",
     title: "cavnessHR",
     slug: "cavenesshr",
     stack: "Using: React, MongoDB, Express, and Node",
@@ -93,7 +114,7 @@ const projects = [
     author: "Gavin Thomas, Jeff McCoy",
     date: "2018",
     technicalDescription:
-    "I was brought on the cavnessHR team to transition their current website and application from PHP to the MERN stack. I worked closely with their CTO, veteran developer, Jeff McCoy",
+      "I was brought on the cavnessHR team to transition their current website and application from PHP to the MERN stack. I worked closely with their CTO, veteran developer, Jeff McCoy",
     featured: true,
     secondaryPictures: [
       require("../../img/cavness/cavness2.png"),
@@ -105,7 +126,6 @@ const projects = [
     github: "https://github.com/GavinThomas1192/HackTheNow",
     stack: "Using: React, Node, Socket.IO, and Microsoft Cognitive Services",
     img: require("../../img/babble/babble1.png"),
-    video: babbleVideo,
     title: "Babble",
     author: "Gavin Thomas & Megan Flood",
     link: "https://github.com/GavinThomas1192/HackTheNow",
@@ -115,7 +135,6 @@ const projects = [
     technicalDescription:
       "This project was built over the course of only 9 hours for Ratio/Globant's Hack The Now AI Hackathon hosted on Feb 4, 2018 in Seattle. We used React as our front end, paired with a simple http server using Socket.IO. Simply input which language you are translating to and from then let Babble do the rest.  ",
     secondaryPictures: [
-      require("../../img/babble/babbleGif.gif"),
       require("../../img/babble/babble2.png"),
       require("../../img/babble/babble3.png"),
       require("../../img/babble/babble4.png")

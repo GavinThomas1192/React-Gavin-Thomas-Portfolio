@@ -27,7 +27,7 @@ const LinkedinIcon = generateShareIcon('linkedin')
 const styles = theme => ({
   card: {
     opacity: 1,
-    backgroundColor: 'rgba(255,255,255,0.7)',
+    backgroundColor: 'rgba(255,255,255,0.9)',
   },
   media: {
     height: 194,
