@@ -44,7 +44,7 @@ module.exports = {
   },
 
   entry: {
-    app: ["./src/javascripts/index.js"],
+    app: ['@babel/polyfill', "./src/javascripts/index.js"],
     vendor: [
       "axios",
       "lost",
