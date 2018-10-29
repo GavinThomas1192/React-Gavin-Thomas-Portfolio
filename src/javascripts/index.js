@@ -9,7 +9,9 @@ import ReactGA from 'react-ga'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
-import NewHome from './pages/newHome'
+import NewHome from './pages/newHome';
+import TestHome from './pages/TestHome'
+
 import MyWork from './pages/myWork'
 import SingleBlogCard from './components/SingleBlogCard'
 import Contact from './pages/Contact'
@@ -41,6 +43,7 @@ const Root = () =>
         <Route exact path="/" component={NewHome} />
         <Route path="/work" component={MyWork} />
         <Route path="/contact" component={Contact} />
+        <Route path="/test" component={TestHome} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={SingleBlogCard} />
         <Route path="/privacy" component={PrivacyPolicy} />
