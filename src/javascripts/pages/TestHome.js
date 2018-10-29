@@ -4,7 +4,15 @@ import Button from 'material-ui/Button';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import ReactGA from 'react-ga';
-import Me from '../../img/454.jpg'
+import Me from '../../img/454.jpg';
+import Node from '../../img/node.jpg';
+import Rn from '../../img/rn.jpg';
+import Js from '../../img/js.png';
+import reactIcon from '../../img/react.png';
+import Cloud from '../../img/cloud.jpg';
+
+
+
 import './_test.scss';
 import './factory.scss';
 
@@ -50,11 +58,16 @@ export default class NewHome extends React.Component {
           <div id="skills" className="five">
             <div class='stage'>
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li> <img src={Node} />
+                </li>
+                <li> <img src={Rn} />
+                </li>
+                <li> <img src={Js} />
+                </li>
+                <li> <img src={reactIcon} />
+                </li>
+                <li> <img src={Cloud} />
+                </li>
               </ul>
               <div class='band'></div>
               <div class='factory'>
