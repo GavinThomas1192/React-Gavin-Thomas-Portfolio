@@ -6,6 +6,8 @@ import Typography from 'material-ui/Typography';
 import ReactGA from 'react-ga';
 import Me from '../../img/454.jpg'
 import './_test.scss';
+import './factory.scss';
+
 
 export default class NewHome extends React.Component {
   constructor(props) {
@@ -46,8 +48,23 @@ export default class NewHome extends React.Component {
         </section>
         <section id="cardBackground" className="container uppy">
           <div id="skills" className="five">
-            <img src={Me} />
+            <div class='stage'>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <div class='band'></div>
+              <div class='factory'>
+                <div class='magic'></div>
+                <div class='screen'></div>
+              </div>
+            </div>
           </div>
+          <img style={{ height: '300px', width: '300px' }} src={Me} />
+
         </section>
       </div>
     )
